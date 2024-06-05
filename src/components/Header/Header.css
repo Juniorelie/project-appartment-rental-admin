@@ -9,6 +9,9 @@ h1 {
   align-items: center;
   background-color: aqua;
   width: 100%;
+  grid-column: 1/12;
+  grid-row: 1/2;
+  height: 3rem;
 }
 
 ul {

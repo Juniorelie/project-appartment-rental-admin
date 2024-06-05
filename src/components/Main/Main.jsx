@@ -17,19 +17,23 @@ function Main() {
   }
   return (
     <section>
-      <button onClick={()=> handleSortByPrice(rooms.price)}>Sort By Price</button>
-      {rooms.map((room) => {
-        return (
-          <article key={room.id}>
-            <h1>
-              {room.city}, {room.country}
-            </h1>
-            <p>{room.price}</p>
-            {room.review_scores_rating > 85 ? <p>🏆</p> : <p>😶‍🌫️</p>}
-            <button onClick={() => handleDeleteCard(room.id)}>Delete</button>
-          </article>
-        );
-      })}
+      <button onClick={() => handleSortByPrice(rooms.price)}>
+        Sort By Price
+      </button>
+      <div className="cardItem">
+        {rooms.map((room) => {
+          return (
+            <article key={room.id}>
+              <h1>
+                {room.city}, {room.country}
+              </h1>
+              <p>{room.price}</p>
+              {room.review_scores_rating > 85 ? <p>🏆</p> : <p>😶‍🌫️</p>}
+              <button onClick={() => handleDeleteCard(room.id)}>Delete</button>
+            </article>
+          );
+        })}
+      </div>
     </section>
   );
 }
