@@ -12,6 +12,7 @@ function Main() {
       {rooms.map((room) => {
         return (
           <article key={room.id}>
+            {room.review_scores_rating >= 80 ? <p>⭐⭐⭐⭐</p> : <p>⭐⭐⭐</p>}
             <h1>
               {room.city}, {room.country}
             </h1>
