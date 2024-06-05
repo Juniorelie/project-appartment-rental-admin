@@ -15,7 +15,7 @@ function Main() {
             <h1>
               {room.city}, {room.country}
             </h1>
-
+            {room.review_scores_rating > 85 ? <p>🏆</p> : <p>😶‍🌫️</p>}
             <button onClick={() => handleDeleteCard(room.id)}>Delete</button>
           </article>
         );
