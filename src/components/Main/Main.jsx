@@ -1,9 +1,10 @@
 import { useState } from "react";
 import AppartmentalJson from "./../../assets/Appartmental.json";
 import "./Main.css";
+import List from "../List/List";
+
 function Main() {
   const [rooms, setRooms] = useState(AppartmentalJson);
-
   function handleDeleteCard(roomId) {
     const filteredRoom = rooms.filter((room) => room.id !== roomId);
     setRooms(filteredRoom);
@@ -20,15 +21,27 @@ function Main() {
       <button onClick={() => handleSortByPrice(rooms.price)}>
         Sort By Price
       </button>
+
       <div className="cardItem">
         {rooms.map((room) => {
           return (
             <article key={room.id}>
-              <h1>
+              <div className="imageSection">
+                <img src={room.picture_url} alt="" />
+              </div>
+
+              {/* <h1>
                 {room.city}, {room.country}
-              </h1>
-              <p>{room.price}</p>
-              {room.review_scores_rating > 85 ? <p>🏆</p> : <p>😶‍🌫️</p>}
+              </h1> */}
+              <List items={room} />
+              <p>Price{room.price}</p>
+              {room.review_scores_rating >= 75 ? (
+                <p>great 75</p>
+              ) : room.review_scores_rating >= 50 ? (
+                <p>great 50</p>
+              ) : (
+                <p> less than 50</p>
+              )}
               <button onClick={() => handleDeleteCard(room.id)}>Delete</button>
             </article>
           );
