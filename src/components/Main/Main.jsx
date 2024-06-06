@@ -5,11 +5,10 @@ import List from "../List/List";
 
 function Main() {
   const [rooms, setRooms] = useState(AppartmentalJson);
-  // const myJSON = JSON.stringify(rooms);
-  // function handleDeleteCard(roomId) {
-  //   const filteredRoom = rooms.filter((room) => room.id !== roomId);
-  //   setRooms(filteredRoom);
-  // }
+  function handleDeleteCard(roomId) {
+    const filteredRoom = rooms.filter((room) => room.id !== roomId);
+    setRooms(filteredRoom);
+  }
 
   function handleSortByPrice() {
     const sortedRooms = rooms.toSorted((roomA, roomB) => {
@@ -19,11 +18,35 @@ function Main() {
   }
   return (
     <section>
-      
       <button onClick={() => handleSortByPrice(rooms.price)}>
         Sort By Price
       </button>
-      <List />
+
+      <div className="cardItem">
+        {rooms.map((room) => {
+          return (
+            <article key={room.id}>
+              <div className="imageSection">
+                <img src={room.picture_url} alt="" />
+              </div>
+
+              {/* <h1>
+                {room.city}, {room.country}
+              </h1> */}
+              <List items={room} />
+              <p>Price{room.price}</p>
+              {room.review_scores_rating >= 75 ? (
+                <p>great 75</p>
+              ) : room.review_scores_rating >= 50 ? (
+                <p>great 50</p>
+              ) : (
+                <p> less than 50</p>
+              )}
+              <button onClick={() => handleDeleteCard(room.id)}>Delete</button>
+            </article>
+          );
+        })}
+      </div>
     </section>
   );
 }

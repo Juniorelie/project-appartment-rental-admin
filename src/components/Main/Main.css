@@ -22,11 +22,20 @@ button {
 }
 article {
   border: 1px solid black;
-  
+
   text-align: center;
   width: 30%;
 }
 
 p {
   color: black;
+}
+
+.imageSection {
+  height: 50%;
+  padding: 0.5rem;
+  img {
+    height: 100%;
+    width: 100%;
+  }
 }
