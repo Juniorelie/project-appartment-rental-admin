@@ -35,12 +35,18 @@ function Main() {
               </h1> */}
               <List items={room} />
               <p>Price{room.price}</p>
-              {room.review_scores_rating >= 75 ? (
-                <p>great 75</p>
-              ) : room.review_scores_rating >= 50 ? (
-                <p>great 50</p>
+              {room.review_scores_rating >= 5 ? (
+                <p>⭐⭐⭐⭐⭐</p>
+              ) : room.review_scores_rating >= 4 ? (
+                <p>⭐⭐⭐⭐</p>
+              ) : room.review_scores_rating >= 3 ? (
+                <p>⭐⭐⭐</p>
+              ) : room.review_scores_rating >= 2 ? (
+                <p>⭐⭐</p>
+              ) : room.review_scores_rating >= 1 ? (
+                <p>⭐</p>
               ) : (
-                <p> less than 50</p>
+                <p>No rating</p>
               )}
               <button onClick={() => handleDeleteCard(room.id)}>Delete</button>
             </article>
