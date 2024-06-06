@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import "./CreateForm.css";
+
 
 function CreateForm({ handleSubmit }) {
   const [host_location, setCity] = useState("");
