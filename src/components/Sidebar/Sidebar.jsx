@@ -4,15 +4,15 @@ import AppartmentalJson from "./../../assets/Appartmental.json";
 import "./Sidebar.css";
 function Sidebar() {
   const [rooms, setRooms] = useState(AppartmentalJson);
-  const [displayForm, setDisplayForm] = useState(false)
+  const [displayForm, setDisplayForm] = useState(false);
   function handleSubmit(event, roomToCreate) {
-		event.preventDefault()
-		// const clone = [...bands]
-		// clone.push(bandToCreate)
-		// setBands(clone)
-		setRooms([...rooms, roomToCreate])
-		setDisplayForm(true)
-	}
+    event.preventDefault();
+    // const clone = [...bands]
+    // clone.push(bandToCreate)
+    // setBands(clone)
+    setRooms([...rooms, roomToCreate]);
+    setDisplayForm(false);
+  }
   return (
     <div className="sidebar">
       <h1>Side Bar</h1>

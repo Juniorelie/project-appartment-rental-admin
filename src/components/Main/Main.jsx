@@ -34,7 +34,7 @@ function Main() {
                 {room.city}, {room.country}
               </h1> */}
               <List items={room} />
-              <p>Price{room.price}</p>
+              <p>Price: {room.price}</p>
               {room.review_scores_rating >= 5 ? (
                 <p>⭐⭐⭐⭐⭐</p>
               ) : room.review_scores_rating >= 4 ? (
@@ -46,8 +46,9 @@ function Main() {
               ) : room.review_scores_rating >= 1 ? (
                 <p>⭐</p>
               ) : (
-                <p>No rating</p>
+                <p>No ratings</p>
               )}
+              <p>{room.number_of_reviews} reviews</p>
               <button onClick={() => handleDeleteCard(room.id)}>Delete</button>
             </article>
           );
