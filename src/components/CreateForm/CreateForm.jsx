@@ -1,23 +1,24 @@
 import React, { useState } from "react";
 import "./CreateForm.css";
 
-
 function CreateForm({ handleSubmit }) {
   const [host_location, setCity] = useState("");
   const [picture_url, setImageURL] = useState("");
   const [price, setPrice] = useState("");
-
+  const [review_scores_rating, setReviewScoresRating] = useState(0);
   function createList(event) {
     const newList = {
       id: crypto.randomUUID(),
       host_location,
       picture_url,
       price,
+      review_scores_rating,
     };
     handleSubmit(event, newList);
     setCity("");
     setImageURL("");
     setPrice("");
+    setReviewScoresRating(0);
   }
 
   function handleCityChange(event) {
@@ -29,7 +30,9 @@ function CreateForm({ handleSubmit }) {
   function handlepriceChange(event) {
     setPrice(event.currentTarget.value);
   }
-
+  function handleReviewChange(event) {
+    setReviewScoresRating(event.currentTarget.value);
+  }
   return (
     <form onSubmit={createList}>
       <div>
@@ -59,6 +62,16 @@ function CreateForm({ handleSubmit }) {
           id="price"
           value={price}
           onChange={handlepriceChange}
+        />
+      </div>
+
+      <div>
+        <label htmlFor="review">Review: </label>
+        <input
+          type="number"
+          id="review"
+          value={review_scores_rating}
+          onChange={handleReviewChange}
         />
       </div>
 

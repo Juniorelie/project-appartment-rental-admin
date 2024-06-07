@@ -3,7 +3,6 @@ import { useState } from "react";
 import CreateForm from "../CreateForm/CreateForm";
 import List from "./../List/List";
 
-
 function CreateList({ ironRental }) {
   const [rooms, setRooms] = useState(ironRental);
   const [displayForm, setDisplayForm] = useState(false);
@@ -15,10 +14,11 @@ function CreateList({ ironRental }) {
 
   function handleSortByPrice(event) {
     event.preventDefault();
-    const sortedRooms = ironRental.toSorted((roomA, roomB) => {
+    const sortedRooms = rooms.toSorted((roomA, roomB) => {
       return roomA.review_scores_rating - roomB.review_scores_rating;
     });
     setRooms(sortedRooms);
+    console.log(sortedRooms);
   }
 
   function handleSubmit(event, listToCreate) {

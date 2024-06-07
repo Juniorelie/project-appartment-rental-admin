@@ -1,4 +1,7 @@
 .sidebar {
+  position: fixed;
+  top: 3rem;
+  padding-top: 2rem;
   grid-column: 1/2;
   grid-row: 2/3;
   background-color: white;
