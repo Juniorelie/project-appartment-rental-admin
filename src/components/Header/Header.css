@@ -1,26 +1,34 @@
-h1 {
-  color: black;
-}
-
-.header {
-  position: fixed;
+.header{
+  background-color: #1a1f71;
+  color: var(--font-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
- 
-  width: 100%;
-  grid-column: 1/12;
-  grid-row: 1/2;
-  height: 3rem;
+  width: 100dvw;
+  h1{
+    margin-left: 1rem;
+  }
+
+  nav{
+    margin-right: 1rem;
+    ul{
+      list-style: none;
+      display: flex;
+
+
+      li{
+        margin-left: 0.5rem;
+
+      }
+
+      li:hover{
+        .linkClass{
+          color: #b3c7e6;
+        }
+      }
+    }
+    
+  }
 }
 
-ul {
-  display: flex;
-  gap: 0.5rem;
-  list-style: none;
-}
 
-a {
-  text-decoration: none;
-  color: black;
-}

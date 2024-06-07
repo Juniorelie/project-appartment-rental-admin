@@ -7,18 +7,10 @@ import CreateList from "../CreateList/CreateList";
 
 function Main() {
   const [rooms, setRooms] = useState(AppartmentalJson);
-  
-  
-  
-
-  
-  
 
   return (
     <section>
       <CreateList ironRental={rooms} />
-      
-
     </section>
   );
 }

@@ -1,64 +1,33 @@
-section {
-  grid-column: 2/3;
-  grid-row: 2/3;
+section{
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  width: 95%;
-  margin-left: auto;
-  /* margin-right: auto; */
-  margin-bottom: 2rem;
-}
 
-.cardItem {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  width: 90%;
-  margin: auto;
-}
-button {
-  width: max-content;
-  margin: 2rem;
-}
-article {
-  text-align: center;
-  width: 30%;
-  box-shadow: 5px 5px 15px black;
-  border-radius: 10px;
-}
+  button{
+    width: max-content;
+  }
 
-p {
-  color: black;
-}
-
-.imageSection {
-  height: 50%;
-  padding: 1rem;
-  img {
-    height: 100%;
-    width: 100%;
+  article{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 1px 2px 5px;
     border-radius: 10px;
+    transition: 1s;
+  }
+
+  article:hover{
+    scale: 1.05;
+    box-shadow: 5px 5px 15px #b3c7e6;
   }
 }
-.btn {
+
+.cardItem{
+  margin-top: 5rem;
   display: flex;
-  justify-content: space-between;
-}
-button {
-  color: white;
-  font-weight: 500;
-  font-size: 1rem;
-  padding: 0.5rem;
-  background-color: black;
-  border: none;
-  border-radius: 0.5rem;
-}
-
-.primary {
-  background-color: rgb(21, 214, 21);
-}
-
-.danger {
-  background-color: rgb(255, 7, 7);
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  
 }

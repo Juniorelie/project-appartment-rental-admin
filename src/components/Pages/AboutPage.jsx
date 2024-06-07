@@ -8,8 +8,8 @@ function AboutPage() {
         This is an apartment rental project in which the user can see and manage
         the different apartments shown.
       </p>
-      <p>This project's authors are Kheerty and Elie</p>
-      <p>Kheerty's social</p>
+      <p>This project's authors are Keerthy and Elie</p>
+      <p>Keerthy's social</p>
       <ul>
         <li>
           <a

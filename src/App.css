@@ -1,9 +1,0 @@
-.container {
-  display: grid;
-  grid-template-columns: 20% 1fr;
-  grid-template-rows: 3rem 1fr 3rem;
-}
-
-h2{
-  color: black;
-}
