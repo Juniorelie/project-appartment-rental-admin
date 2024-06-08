@@ -39,7 +39,7 @@ function CreateList({ ironRental }) {
       <div className="cardItem">
         {rooms.map((room) => {
           return (
-            <article key={room.id}>
+            <article key={room.id} style={{backgroundImage:`url("${room.picture_url}")`}}>
               <List items={room} remove={handleDeleteCard} />
             </article>
           );

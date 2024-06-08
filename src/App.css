@@ -1,0 +1,38 @@
+/* App.css */
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+ 
+  .main {
+    position: relative;
+    top: 3rem;
+    margin-bottom: 6rem;
+    flex: 1;
+    overflow-y: auto; /* allows scrolling if content is too tall */
+  }
+  
+
+
+  button{
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    color: #fff;
+    text-shadow: 2px 2px black;
+  }
+
+  .primary{
+    background-color: #198754;
+  }
+  .danger{
+    background-color: #dc3545;
+  }

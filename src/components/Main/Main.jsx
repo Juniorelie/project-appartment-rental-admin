@@ -9,9 +9,9 @@ function Main() {
   const [rooms, setRooms] = useState(AppartmentalJson);
 
   return (
-    <section>
+    <main className="main">
       <CreateList ironRental={rooms} />
-    </section>
+    </main>
   );
 }
 

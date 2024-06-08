@@ -12,7 +12,7 @@ import FavouritesPage from "./components/Pages/FavouritesPage.jsx";
 import { Routes, Route } from "react-router-dom";
 function App() {
   return (
-    <>
+    <div className="container">
       <Header />
 
       <Routes>
@@ -23,7 +23,7 @@ function App() {
       </Routes>
 
       <Footer />
-    </>
+    </div>
   );
 }
 

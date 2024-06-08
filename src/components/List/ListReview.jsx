@@ -2,7 +2,7 @@ import React from 'react'
 
 function ListReview({review}) {
   return (
-    <div>
+    <>
         {review>= 5 ? (
                 <p>⭐⭐⭐⭐⭐</p>
               ) : review >= 4 ? (
@@ -16,7 +16,7 @@ function ListReview({review}) {
               ) : (
                 <p>No rating</p>
               )}
-    </div>
+    </>
   )
 }
 

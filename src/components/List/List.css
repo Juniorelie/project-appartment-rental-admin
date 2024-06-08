@@ -1,24 +1,7 @@
-.imageSection {
-  width: 100%;
-  aspect-ratio: 1;
-  background-position: center;
-  background-size: cover;
-  border-radius: 10px;
-}
-
-h2 {
-  font-family: "Righteous", sans-serif;
-  color: black;
-  text-transform: uppercase;
-  font-size: 1.2rem;
-}
-
-p {
-  color: black;
-  font-family: "Lato", sans-serif;
-  text-align: center;
-  font-size: 0.8rem;
-  line-height: 150%;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+.listImage{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100px;
+    width: 100px;
 }

@@ -4,7 +4,7 @@ import Main from "../Main/Main";
 function HomePage() {
     console.log('hello')
   return (
-    <div>
+    <div className="mainSection">
       <Main />
     </div>
   );
