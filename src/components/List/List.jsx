@@ -1,4 +1,7 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import ListItemCity from "./ListItemCity";
 import ListItemImage from "./ListItemImage";
 import ListPrice from "./ListPrice";
@@ -16,9 +19,11 @@ function List({ items, remove }) {
       </div>
       <div className="btn listButton">
         <button className="danger" onClick={() => remove(items.id)}>
-          Delete
+          <FontAwesomeIcon icon={faTrash} size="1x" />
         </button>
-        <button className="primary">Favourites</button>
+        <button className="primary">
+          <FontAwesomeIcon icon={faHeart} size="1x" />
+        </button>
       </div>
     </>
   );
