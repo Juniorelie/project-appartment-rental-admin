@@ -6,7 +6,7 @@ import List from "./../List/List";
 function CreateList({ ironRental }) {
   const [rooms, setRooms] = useState(ironRental);
   const [displayForm, setDisplayForm] = useState(false);
-  const [searchRooms, setSearchRooms] = useState("City or Country")
+  const [searchRooms, setSearchRooms] = useState("City or Country");
   function handleDeleteCard(roomId) {
     const filteredRoom = rooms.filter((room) => room.id !== roomId);
     setRooms(filteredRoom);
@@ -28,26 +28,23 @@ function CreateList({ ironRental }) {
     setDisplayForm(false);
   }
 
-  function handleSearchCity(event){
-    const value = event.currentTarget.value
-    setSearchRooms(value)
-    
-	
+  function handleSearchCity(event) {
+    const value = event.currentTarget.value;
+    setSearchRooms(value);
   }
-  let displayRooms
- 
-  if (searchRooms === "" || searchRooms === 'City or Country' ) {
-		displayRooms = rooms
-	} else {
-		displayRooms = rooms.filter((room) =>
+  let displayRooms;
 
-			room?.host_location?.toLowerCase().includes(searchRooms.toLowerCase())
-		)
-	}
+  if (searchRooms === "" || searchRooms === "City or Country") {
+    displayRooms = rooms;
+  } else {
+    displayRooms = rooms.filter((room) =>
+      room?.host_location?.toLowerCase().includes(searchRooms.toLowerCase())
+    );
+  }
   return (
     <>
       <div className="inputSection">
-        <input type="search" value={searchRooms} onfocus="this.placeholder = ''" onChange={handleSearchCity}/>
+        <input type="search" value={searchRooms} onChange={handleSearchCity} />
       </div>
       {/* <button onClick={() => setDisplayForm(!displayForm)}>
         Add New Iron Dom
@@ -58,7 +55,10 @@ function CreateList({ ironRental }) {
       <div className="cardItem">
         {displayRooms.map((room) => {
           return (
-            <article key={room.id} style={{backgroundImage:`url("${room.picture_url}")`}}>
+            <article
+              key={room.id}
+              style={{ backgroundImage: `url("${room.picture_url}")` }}
+            >
               <List items={room} remove={handleDeleteCard} />
             </article>
           );
