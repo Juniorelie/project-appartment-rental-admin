@@ -1,13 +1,9 @@
 import React from "react";
 
 function ListItemImage({ picture_url }) {
+
   return (
-    <div
-      className="imageSection"
-      style={{
-        backgroundImage: `url(${picture_url})`,
-      }}
-    >
+    <div className="listImage" style={{backgroundImage:`url("${picture_url}")`, color:"red"}}>
       {/* <img src={picture_url} alt="" /> */}
     </div>
   );

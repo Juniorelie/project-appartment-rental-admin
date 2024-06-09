@@ -9,10 +9,12 @@ import HomePage from "./components/Pages/HomePage.jsx";
 import AboutPage from "./components/Pages/AboutPage.jsx";
 import AddNewPage from "./components/Pages/AddNewPage.jsx";
 import FavouritesPage from "./components/Pages/FavouritesPage.jsx";
+import ErrorPage from "./components/Pages/ErrorPage.jsx";
+
 import { Routes, Route } from "react-router-dom";
 function App() {
   return (
-    <>
+    <div className="container">
       <Header />
 
       <Routes>
@@ -20,10 +22,12 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/addnewroom" element={<AddNewPage />} />
         <Route path="/favourites" element={<FavouritesPage />} />
+
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
 
       <Footer />
-    </>
+    </div>
   );
 }
 

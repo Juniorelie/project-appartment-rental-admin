@@ -1,0 +1,108 @@
+/* App.css */
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.main {
+  position: relative;
+  top: 3rem;
+  margin-bottom: 6rem;
+  flex: 1;
+  overflow-y: auto; /* allows scrolling if content is too tall */
+}
+
+button {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  color: #fff;
+  text-shadow: 2px 2px black;
+}
+
+.primary {
+  background-color: #198754;
+}
+.danger {
+  background-color: #dc3545;
+}
+
+.linkClass {
+  color: var(--font-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.linkClass:hover {
+  color: var(--hover-font-color);
+}
+
+.createForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* error page css */
+
+.errorPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  .rigthSection {
+    width: 70%;
+    img {
+      width: 70%;
+      margin: 1rem;
+    }
+  }
+  .leftSection {
+    width: 30%;
+    h1 {
+      font-size: 3.5rem;
+      line-height: 3rem;
+    }
+    p {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+    }
+    .linkButton {
+      background-color: #0d6efd;
+    }
+  }
+}
+
+/* Link Button */
+.linkButton {
+  position: relative;
+  margin: 2rem;
+  padding: 0.5rem;
+  top: 2rem;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.5rem;
+
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+}
+
+/* create form */
+
+.createForm {
+ height: 100%;
+}
+
+

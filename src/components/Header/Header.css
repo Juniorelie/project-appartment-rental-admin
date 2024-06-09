@@ -1,34 +1,26 @@
-.header{
-  background-color: #1a1f71;
+.header {
+  position: fixed;
+  background-color: var(--header-bg);
   color: var(--font-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100dvw;
-  h1{
+  height: 3rem;
+  z-index: 1;
+  h1 {
     margin-left: 1rem;
   }
 
-  nav{
+  nav {
     margin-right: 1rem;
-    ul{
+    ul {
       list-style: none;
       display: flex;
 
-
-      li{
+      li {
         margin-left: 0.5rem;
-
-      }
-
-      li:hover{
-        .linkClass{
-          color: #b3c7e6;
-        }
       }
     }
-    
   }
 }
-
-

@@ -1,6 +1,8 @@
 :root {
   --font-color: #fff;
   --font-size: 1rem;
+  --header-bg: #1a1f71;
+  --hover-font-color: #b3c7e6;
 }
 
 *:root {
@@ -15,19 +17,4 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
-
-.linkClass {
-  color: var(--font-color);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-
-.createForm{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
 }

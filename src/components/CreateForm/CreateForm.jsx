@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./CreateForm.css";
-
+import { Link } from "react-router-dom";
 function CreateForm({ handleSubmit }) {
   const [host_location, setCity] = useState("");
   const [picture_url, setImageURL] = useState("");
   const [price, setPrice] = useState("");
-  const [review_scores_rating, setReviewScoresRating] = useState(0);
+  const [review_scores_rating, setReviewScoresRating] = useState();
   function createList(event) {
     const newList = {
       id: crypto.randomUUID(),
@@ -35,47 +35,57 @@ function CreateForm({ handleSubmit }) {
   }
   return (
     <form onSubmit={createList}>
-      <div>
-        <label htmlFor="city">Enter the city and Country:</label>
+      <div className="group">
         <input
           type="text"
           id="city"
           value={host_location}
           onChange={handleCityChange}
         />
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label htmlFor="city">Enter the city and Country:</label>
       </div>
 
-      <div>
-        <label htmlFor="image">ImageURL: </label>
+      <div className="group">
         <input
           type="url"
           id="image"
           value={picture_url}
           onChange={handlePictureChange}
         />
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label htmlFor="image">ImageURL: </label>
       </div>
 
-      <div>
-        <label htmlFor="price">Price: </label>
+      <div className="group">
         <input
           type="number"
           id="price"
           value={price}
           onChange={handlepriceChange}
         />
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label htmlFor="price">Price: </label>
       </div>
 
-      <div>
-        <label htmlFor="review">Review: </label>
+      <div className="group">
         <input
           type="number"
           id="review"
           value={review_scores_rating}
           onChange={handleReviewChange}
         />
+        <span class="highlight"></span>
+        <span class="bar"></span>
+        <label htmlFor="review">Review: </label>
       </div>
 
-      <button>Create Iron dom</button>
+      <Link className="linkButton" to={"/"}>
+        Create Iron dom
+      </Link>
     </form>
   );
 }
