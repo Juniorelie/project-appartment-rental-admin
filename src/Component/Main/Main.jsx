@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Main({ ironRentals, addFavourites }) {
   const [rooms, setRooms] = useState(ironRentals);
   const [searchRooms, setSearchRooms] = useState("City or Country");
-  const [numPeople, setNumPeople] = useState(1);
+  const [numPeople, setNumPeople] = useState();
   // const [favourites, setFavourites] = useState([]);
 
   // function addFavourites(room, addFavourites) {

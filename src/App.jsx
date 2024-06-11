@@ -3,7 +3,7 @@ import Navbar from "./Component/NavBar/NavBar.jsx";
 import Footer from "./Component/Footer/Footer.jsx";
 import "./App.css";
 import AppartmentalJson from "./assets/AppartmentalJson.json";
-
+import ErrorPage from "./Component/Pages/ErrorPage.jsx";
 import EachRoomPage from "./Component/Pages/EachRoomPage.jsx";
 import HomePage from "./Component/Pages/HomePage.jsx";
 import AddNewPage from "./Component/Pages/AddNewPage.jsx";
@@ -47,6 +47,8 @@ function App() {
           path="/favourites"
           element={<Favourites favourites={favourites} />}
         />
+        <Route path= "*" element={<ErrorPage />}/>
+        
       </Routes>
 
       <Footer />

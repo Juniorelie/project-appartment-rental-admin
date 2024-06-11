@@ -1,8 +1,8 @@
-.mainSection {
+.main {
     display: flex;
     flex-direction: column;
     width: 95%;
-    margin: 1rem auto;
+    margin: 5rem auto;
     gap: 1rem;
     
   }
@@ -13,6 +13,7 @@
     justify-content: center;
     margin-top: 2rem;
     gap: 2rem;
+    width: 100%;
   }
   
   article {
@@ -26,9 +27,9 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    width: 20%;
+    width: 25%;
     border: 1px solid black;
-    padding: 2rem;
+    padding: 1rem;
     border-radius: 1rem;
     color: white;
     text-shadow: 2px 2px black;
@@ -39,9 +40,12 @@
     -moz-transition:all 2s ;
     overflow: hidden;
   }
-  
-    h2 {
-      font-size: 2rem;
+    a{
+      text-decoration: none;
+      color: white;
+    }
+    h3 {
+      font-size: 0.8rem;
     }
   
     .listButton {
