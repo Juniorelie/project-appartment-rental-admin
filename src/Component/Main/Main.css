@@ -1,0 +1,58 @@
+.mainSection {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    margin: 1rem auto;
+    gap: 1rem;
+    
+  }
+  
+  .cardItem {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2rem;
+    gap: 2rem;
+  }
+  
+  article {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 30%;
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 20%;
+    border: 1px solid black;
+    padding: 2rem;
+    border-radius: 1rem;
+    color: white;
+    text-shadow: 2px 2px black;
+    transition: 2s;
+    border: none;
+    -webkit-transition:all 2s ;
+    -o-transition:all 2s ;
+    -moz-transition:all 2s ;
+    overflow: hidden;
+  }
+  
+    h2 {
+      font-size: 2rem;
+    }
+  
+    .listButton {
+      width: 90%;
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    article:hover {
+      background-size: 250%;
+      background-position:10% 10%;
+    }
+  
+  

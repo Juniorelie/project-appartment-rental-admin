@@ -1,33 +1,56 @@
-// import React from "react";
+import { useState } from "react";
+import Navbar from "./Component/NavBar/NavBar.jsx";
+import Footer from "./Component/Footer/Footer.jsx";
 import "./App.css";
-import Header from "./components/Header/Header.jsx";
-import Footer from "./components/Footer/Footer.jsx";
-import Main from "./components/Main/Main.jsx";
-import Sidebar from "./components/Sidebar/Sidebar.jsx";
+import AppartmentalJson from "./assets/AppartmentalJson.json";
 
-import HomePage from "./components/Pages/HomePage.jsx";
-import AboutPage from "./components/Pages/AboutPage.jsx";
-import AddNewPage from "./components/Pages/AddNewPage.jsx";
-import FavouritesPage from "./components/Pages/FavouritesPage.jsx";
-import ErrorPage from "./components/Pages/ErrorPage.jsx";
+import EachRoomPage from "./Component/Pages/EachRoomPage.jsx";
+import HomePage from "./Component/Pages/HomePage.jsx";
+import AddNewPage from "./Component/Pages/AddNewPage.jsx";
+import { Routes, Route, useNavigate } from "react-router-dom";
+import Favourites from "./Component/Pages/Favourites.jsx";
 
-import { Routes, Route } from "react-router-dom";
 function App() {
+  const [rooms, setRooms] = useState(AppartmentalJson);
+  const [favourites, setFavourites] = useState([]);
+  const navigate = useNavigate();
+
+  function addRooms(room) {
+    setRooms((prev) => [room, ...prev]);
+    navigate(`/`);
+  }
+
+  function addFavourites(room) {
+    console.log(room);
+    const findFavourite = favourites.find((each) => each.id === room.id);
+    console.log(findFavourite);
+    if (findFavourite) return;
+    setFavourites([room, ...favourites]);
+  }
   return (
-    <div className="container">
-      <Header />
-
+    <>
+      <Navbar />
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/addnewroom" element={<AddNewPage />} />
-        <Route path="/favourites" element={<FavouritesPage />} />
+        <Route
+          path="/"
+          element={<HomePage rooms={rooms} addFavourites={addFavourites} />}
+        />
 
-        <Route path="*" element={<ErrorPage />} />
+        <Route path="/rooms">
+          <Route path=":roomId" element={<EachRoomPage rooms={rooms} />} />
+          <Route
+            path="addnew"
+            element={<AddNewPage rooms={rooms} addRooms={addRooms} />}
+          />
+        </Route>
+        <Route
+          path="/favourites"
+          element={<Favourites favourites={favourites} />}
+        />
       </Routes>
 
       <Footer />
-    </div>
+    </>
   );
 }
 

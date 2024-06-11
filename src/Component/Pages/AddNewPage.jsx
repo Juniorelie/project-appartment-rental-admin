@@ -1,24 +1,25 @@
-import React, { useState } from "react";
-import "./CreateForm.css";
-import { Link } from "react-router-dom";
-function CreateForm({ handleSubmit }) {
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import "./../CreateForm/CreateForm.css";
+
+function AddNewPage({ rooms, addRooms }) {
   const [host_location, setCity] = useState("");
   const [picture_url, setImageURL] = useState("");
   const [price, setPrice] = useState("");
-  const [review_scores_rating, setReviewScoresRating] = useState();
+  // const [review_scores_rating, setReviewScoresRating] = useState();
+  //
+
   function createList(event) {
+    event.preventDefault();
     const newList = {
-      id: crypto.randomUUID(),
+      id: Math.floor(100000 + Math.random() * 900000),
       host_location,
       picture_url,
       price,
-      review_scores_rating,
+      // review_scores_rating,
     };
-    handleSubmit(event, newList);
-    setCity("");
-    setImageURL("");
-    setPrice("");
-    setReviewScoresRating(0);
+    addRooms(newList);
+    console.log(newList.id);
   }
 
   function handleCityChange(event) {
@@ -30,9 +31,9 @@ function CreateForm({ handleSubmit }) {
   function handlepriceChange(event) {
     setPrice(event.currentTarget.value);
   }
-  function handleReviewChange(event) {
-    setReviewScoresRating(event.currentTarget.value);
-  }
+  // function handleReviewChange(event) {
+  //   setReviewScoresRating(event.currentTarget.value);
+  // }
   return (
     <form onSubmit={createList}>
       <div className="group">
@@ -42,8 +43,8 @@ function CreateForm({ handleSubmit }) {
           value={host_location}
           onChange={handleCityChange}
         />
-        <span class="highlight"></span>
-        <span class="bar"></span>
+        <span className="highlight"></span>
+        <span className="bar"></span>
         <label htmlFor="city">Enter the city and Country:</label>
       </div>
 
@@ -54,8 +55,8 @@ function CreateForm({ handleSubmit }) {
           value={picture_url}
           onChange={handlePictureChange}
         />
-        <span class="highlight"></span>
-        <span class="bar"></span>
+        <span className="highlight"></span>
+        <span className="bar"></span>
         <label htmlFor="image">ImageURL: </label>
       </div>
 
@@ -66,28 +67,28 @@ function CreateForm({ handleSubmit }) {
           value={price}
           onChange={handlepriceChange}
         />
-        <span class="highlight"></span>
-        <span class="bar"></span>
+        <span className="highlight"></span>
+        <span className="bar"></span>
         <label htmlFor="price">Price: </label>
       </div>
 
-      <div className="group">
-        <input
-          type="number"
-          id="review"
-          value={review_scores_rating}
-          onChange={handleReviewChange}
-        />
-        <span class="highlight"></span>
-        <span class="bar"></span>
-        <label htmlFor="review">Review: </label>
-      </div>
+      {/* <div className="group">
+          <input
+            type="number"
+            id="review"
+            value={review_scores_rating}
+            onChange={handleReviewChange}
+          />
+          <span className="highlight"></span>
+          <span className="bar"></span>
+          <label htmlFor="review">Review: </label>
+        </div> */}
 
-      <Link className="linkButton" to={"/"}>
+      <button className="linkButton" type="submit">
         Create Iron dom
-      </Link>
+      </button>
     </form>
   );
 }
 
-export default CreateForm;
+export default AddNewPage;
