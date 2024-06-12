@@ -59,18 +59,21 @@ function Main({ ironRentals, addFavourites }) {
   }
 
   return (
-    <main className="main">
-      <div>
-        <div className="inputSection">
-          <input
+    <main className="flex flex-col w-11/12 mx-auto mt-2 gap-4">
+      <div className="flex gap-8 ">
+        <div className="flex-1 bg-white m-4 p-2 self-center w-4/12 rounded-lg" >
+          <input className="mx-auto"
             type="search"
             value={searchRooms}
             onChange={handleSearchCity}
           />
         </div>
-        <button onClick={handleSortByReview}>Sort By Review</button>
-        <div className="accomadates">
-          <input
+        <div className="flex-1 bg-white m-4 p-2 self-center w-4/12 rounded-lg" >
+          <button onClick={handleSortByReview} className="mx-auto ">Sort By Review</button>
+        </div>
+
+        <div className="flex-1 bg-white m-4 p-2 self-center w-4/12 rounded-lg" >
+          <input className="mx-auto "
             type="range"
             id="numPeople"
             name="numPeople"
@@ -83,8 +86,7 @@ function Main({ ironRentals, addFavourites }) {
         </div>
       </div>
       <div>
-        
-        <List
+        <List 
           rentalRooms={displayRooms}
           remove={handleDeleteCard}
           addFavourites={addFavourites}

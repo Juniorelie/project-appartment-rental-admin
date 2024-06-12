@@ -20,12 +20,15 @@ function App() {
     navigate(`/`);
   }
 
+ 
   function addFavourites(room) {
     console.log(room);
     const findFavourite = favourites.find((each) => each.id === room.id);
     console.log(findFavourite);
     if (findFavourite) return;
     setFavourites([room, ...favourites]);
+
+    
   }
   return (
     <>
@@ -47,8 +50,7 @@ function App() {
           path="/favourites"
           element={<Favourites favourites={favourites} />}
         />
-        <Route path= "*" element={<ErrorPage />}/>
-        
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
 
       <Footer />

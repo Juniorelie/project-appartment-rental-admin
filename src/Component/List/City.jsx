@@ -1,11 +1,11 @@
 function City({host_location}) {
   
     return (
-      <div>
-          <h3>
+      
+          <h2 className="text-4xl font-bold">
               {host_location}
-          </h3>
-      </div>
+          </h2>
+ 
     )
   }
   

@@ -1,8 +1,8 @@
 function Price({price}) {
     return (
-      <div>
-          <h4>{price}</h4>
-      </div>
+      
+          <h4 className="font-black">{price}</h4>
+
     )
   }
   

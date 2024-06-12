@@ -8,10 +8,15 @@ function EachRoomPage({ rooms }) {
 //   console.log(id)
     const room = rooms.find((room)=> room.id === id)
     console.log(room)
-  return <div>
-        <h2>{room.host_location}</h2>
+  return <div className="w-[92%] mx-auto flex ">
+      <div className="w-[50%]">
+      <h2 className="text-4xl font-extrabold mt-4 ">{room.name}</h2>
         {/* <p>{room.description}</p> */}
-        <img src={`${room.picture_url}`} alt="" />
+        <img src={`${room.picture_url}`} alt=""  className="w-[100%] mt-8 rounded-lg"/>
+      </div>
+      <div>
+  <h1>hello</h1>
+      </div>
   </div>;
 }
 

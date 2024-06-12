@@ -1,9 +1,9 @@
 
 function Name({name}) {
     return (
-      <div>
-          <h4>{name}</h4>
-      </div>
+    
+          <h4 className="font-bold leading-5">{name}</h4>
+   
     )
   }
   
