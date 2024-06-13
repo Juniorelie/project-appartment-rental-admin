@@ -40,6 +40,15 @@ function Main({ ironRentals, addFavourites }) {
     setRooms(filteredRoom);
   }
 
+  function handleSortByHigher(event) {
+    event.preventDefault();
+    const sortedRooms = rooms.toSorted((roomA, roomB) => {
+      return roomB.review_scores_rating - roomA.review_scores_rating;
+    });
+    setRooms(sortedRooms);
+    console.log(sortedRooms);
+  }
+
   let displayRooms;
 
   if (
@@ -60,20 +69,34 @@ function Main({ ironRentals, addFavourites }) {
 
   return (
     <main className="flex flex-col w-11/12 mx-auto mt-2 gap-4">
-      <div className="flex gap-8 ">
-        <div className="flex-1 bg-white m-4 p-2 self-center w-4/12 rounded-lg" >
-          <input className="mx-auto"
+      <div className="flex gap-8 bg-headerBG bg-opacity-20 rounded-lg h-20">
+        <div className="flex-1 bg-white m-4 p-2 self-center w-4/12 rounded-lg">
+          <input
+            className="mx-auto"
             type="search"
             value={searchRooms}
             onChange={handleSearchCity}
           />
         </div>
-        <div className="flex-1 bg-white m-4 p-2 self-center w-4/12 rounded-lg" >
-          <button onClick={handleSortByReview} className="mx-auto ">Sort By Review</button>
+        <div className="flex-1 bg-white m-4 p-2 self-center w-4/12 rounded-lg flex gap-1">
+          <button
+            onClick={handleSortByReview}
+            className="w-[50%] bg-headerBG mx-auto rounded-lg"
+          >
+            Lowest Review
+          </button>
+          <button
+            onClick={handleSortByHigher}
+            className="w-[50%] bg-headerBG mx-auto rounded-lg"
+          >
+            Highest Review
+          </button>
         </div>
 
-        <div className="flex-1 bg-white m-4 p-2 self-center w-4/12 rounded-lg" >
-          <input className="mx-auto "
+        <div className="flex-1 bg-white m-4 p-2 self-center w-4/12 rounded-lg flex gap-2 justify-center">
+          <p className="text-black">Accommodates</p>
+          <input
+            className=" "
             type="range"
             id="numPeople"
             name="numPeople"
@@ -82,11 +105,10 @@ function Main({ ironRentals, addFavourites }) {
             value={numPeople}
             onChange={handleNumPeople}
           />
-          <label htmlFor="numPeople">Accomadates</label>
         </div>
       </div>
       <div>
-        <List 
+        <List
           rentalRooms={displayRooms}
           remove={handleDeleteCard}
           addFavourites={addFavourites}

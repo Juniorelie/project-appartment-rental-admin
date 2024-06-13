@@ -4,6 +4,7 @@ import Price from "./Price";
 import { Link } from "react-router-dom";
 import "./List.css";
 import Image from "./Image";
+import Review from "./Review";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
@@ -17,7 +18,7 @@ function List({ rentalRooms, remove, addFavourites }) {
           return (
             <div id="card"
               key={room.id}
-              className="relative w-[30%] flex flex-col justify-between rounded"
+              className="relative w-[30%] flex flex-col justify-between rounded bg-headerBG bg-opacity-20 rounded-lg"
             >
               <Link to={`/rooms/${room.id}`}>
                 <article
@@ -29,11 +30,12 @@ function List({ rentalRooms, remove, addFavourites }) {
                   <City host_location={room.host_location} />
                   <Name name={room.name} />
                   <Price price={room.price} />
+                  <Review review={room}/>
                 </article>
               </Link>
               <div className="absolute top-0 w-[100%] flex justify-between text-white p-6">
                 <button
-                  className="m-2 hover:text-green-50"
+                  className="m-2 hover:text-green-500"
                   onClick={() => addFavourites(room)}
                 >
                   <FontAwesomeIcon icon={faHeart} size="2x" />
