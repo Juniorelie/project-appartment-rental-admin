@@ -13,12 +13,12 @@ function List({ rentalRooms, remove, addFavourites }) {
 
   return (
     <>
-      <div className="flex flex-wrap gap-6 justify-center ">
+      <div className="flex flex-wrap gap-6 justify-center sm:flex-col md:flex-row">
         {rentalRooms.map((room) => {
           return (
             <div id="card"
               key={room.id}
-              className="relative w-[30%] flex flex-col justify-between rounded bg-headerBG bg-opacity-20 rounded-lg"
+              className="relative md:w-[30%] flex flex-col justify-between  bg-headerBG bg-opacity-20 rounded-lg sm:w-[100%]"
             >
               <Link to={`/rooms/${room.id}`}>
                 <article

@@ -8,7 +8,7 @@ function AddNewPage({ rooms, addRooms }) {
   const [price, setPrice] = useState("");
   // const [review_scores_rating, setReviewScoresRating] = useState();
   //
-
+  const navigate = useNavigate()
   function createList(event) {
     event.preventDefault();
     const newList = {
@@ -19,6 +19,7 @@ function AddNewPage({ rooms, addRooms }) {
       // review_scores_rating,
     };
     addRooms(newList);
+    navigate('/')
     console.log(newList.id);
   }
 

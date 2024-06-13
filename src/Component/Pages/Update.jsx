@@ -35,7 +35,7 @@ function Update({ rooms, handleUpdate }) {
   }
 
   return (
-    <div>
+    <div className=" flex justify-center items-center bg-headerBG bg-opacity-30 w-[80%] xl:max-w-max mx-auto p-16 rounded-xl text-center ">
       <form onSubmit={handleSubmit}>
         <div className="group">
           <input
@@ -43,6 +43,8 @@ function Update({ rooms, handleUpdate }) {
             id="city"
             value={host_location}
             onChange={handleCityChange}
+            className="w-[90%] mx-2"
+          required
           />
           <span className="highlight"></span>
           <span className="bar"></span>
@@ -55,6 +57,8 @@ function Update({ rooms, handleUpdate }) {
             id="image"
             value={picture_url}
             onChange={handlePictureChange}
+            className="w-[90%] mx-2"
+          required
           />
           <span className="highlight"></span>
           <span className="bar"></span>
@@ -67,6 +71,8 @@ function Update({ rooms, handleUpdate }) {
             id="price"
             value={price}
             onChange={handlepriceChange}
+            className="w-[90%] mx-2"
+          required
           />
           <span className="highlight"></span>
           <span className="bar"></span>
@@ -85,7 +91,7 @@ function Update({ rooms, handleUpdate }) {
           <label htmlFor="review">Review: </label>
         </div> */}
 
-        <button className="linkButton" type="submit">
+        <button className="bg-headerBG p-4 rounded-md text-white font-bold" type="submit">
           Create Iron dom
         </button>
       </form>

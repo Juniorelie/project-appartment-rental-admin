@@ -4,8 +4,8 @@ import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
 function Aboutus() {
   return (
-    <div className="w-[92%] mx-auto flex ">
-      <div className="w-[50%] p-10">
+    <div className="w-[92%] mx-auto flex sm:flex-col">
+      <div className="w-[50%] p-10 sm:w-[100%]">
         <h2 className="text-2xl font-bold">About us</h2>
         <p>
           This is an apartment rental web page project is designed to provide
@@ -17,7 +17,7 @@ function Aboutus() {
           CSS for styling the web
         </p>
       </div>
-      <div className="w-[50%] p-10">
+      <div className="w-[50%] p-10 sm:w-[100%] sm:mb-[20%]">
         <h2 className="text-2xl font-bold">
           This project's authors are Keerthy and Elie
         </h2>

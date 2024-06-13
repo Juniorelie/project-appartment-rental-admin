@@ -15,7 +15,7 @@ function Favourites({ favourites }) {
   }
   console.log(favourites);
   return (
-    <div className="flex gap-2 w-[92%] mx-auto">
+    <div className="flex gap-2 w-[92%] mx-auto sm:flex-col">
       {rooms.map((room) => {
         return (
           <article

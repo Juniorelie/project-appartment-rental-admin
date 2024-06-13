@@ -6,7 +6,7 @@ import "./Footer.css";
 
 function Footer() {
   return (
-    <footer className="w-[92%]   bottom-0 fixed left-[4%] mt-10 ">
+    <footer className="w-[100%]   bottom-0 fixed  mt-10 ">
       <Link to={"https://github.com/Juniorelie/project-appartment-rental-admin.git"}>
         <FontAwesomeIcon icon={faGithub} /> GitHUb
       </Link>

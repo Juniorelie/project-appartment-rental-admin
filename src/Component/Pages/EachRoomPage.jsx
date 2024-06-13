@@ -28,8 +28,8 @@ function EachRoomPage({ rooms }) {
             <Link to={`/rooms/update/${room.id}`} className="text-headerBG hover:text-blue-500"><FontAwesomeIcon icon={faGear} size="3x"/></Link>
             {/* <Link to={"/"} className="text-headerBG  hover:text-blue-500"><FontAwesomeIcon icon={faCircleRight} size="3x"/></Link> */}
           </div>  
-  <div className="w-[92%] mx-auto flex mb-0">
-      <div className="w-[50%]">
+  <div className="md:w-[92%] md:mx-auto flex md:flex-row sm:flex-col mb-[20%]">
+      <div className="md:w-[50%] sm:w-[100%] md:m-8">
         <h2 className="text-4xl font-extrabold mt-4 ">{room.name}</h2>
         {/* <p>{room.description}</p> */}
         <img
@@ -37,7 +37,7 @@ function EachRoomPage({ rooms }) {
           alt=""
           className="w-[100%] h-[50%] mt-8 rounded-lg"
         />
-        <div className="mt-4 bg-opacity-10 bg-black max-w-max p-4 rounded-xl">
+        <div className="mt-4 mbg-opacity-10 bg-black bg-opacity-10 max-w-max p-4 rounded-xl sm:mx-auto">
           <h3 className="font-semibold ">Room : {room.host_location}</h3>
           <p className="mt-2">
             <FontAwesomeIcon icon={faPeopleRoof} /> {room.bedrooms} bed,{" "}
@@ -49,7 +49,9 @@ function EachRoomPage({ rooms }) {
           <div className="mt-2">
             {stars.map((_, index) => {
               return (
+                
                 <>
+                <div key={_.id}>
                   <FontAwesomeIcon
                     icon={faStar}
                     key={room.id}
@@ -60,13 +62,14 @@ function EachRoomPage({ rooms }) {
                         : colors.grey
                     }
                   />
+                  </div>
                 </>
               );
             })}
           </div>
         </div>
       </div>
-      <div className="w-[50%] m-8">
+      <div className="md:w-[50%] md:m-8 sm:w-[100%] sm:m-0 sm:mt-4">
         <p>{room.description}</p>
 
         <div className="mt-4">
@@ -87,21 +90,21 @@ function EachRoomPage({ rooms }) {
                 />
                 <p>
                   {room.host_identity_verified >= true ? (
-                    <p>
+                   
                       <FontAwesomeIcon
                         icon={faCircleCheck}
                         size="2x"
-                        className="text-green-500 absolute bottom-[1%] right-[20%]"
+                        className="text-green-500 absolute bottom-[1%] right-[20%] sm:text-[100%] md:text-[200%]"
                       />
-                    </p>
+                   
                   ) : (
-                    <p>
+                    
                       <FontAwesomeIcon
                         icon={faCircleCheck}
                         size="2x"
-                        className="text-red-500 absolute bottom-[1%] right-[20%]"
+                        className="text-red-500 absolute bottom-[1%] right-[20%] sm:text-[100%] md:text-[200%]"
                       />
-                    </p>
+                
                   )}
                 </p>
               </div>

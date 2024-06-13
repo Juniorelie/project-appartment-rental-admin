@@ -69,8 +69,8 @@ function Main({ ironRentals, addFavourites }) {
 
   return (
     <main className="flex flex-col w-11/12 mx-auto mt-2 gap-4">
-      <div className="flex gap-8 bg-headerBG bg-opacity-20 rounded-lg h-20">
-        <div className="flex-1 bg-white m-4 p-2 self-center w-4/12 rounded-lg">
+      <div className="flex md:flex-row md:gap-8 bg-headerBG bg-opacity-20 rounded-lg h-20 sm:flex-col sm:gap-0 sm:h-[100%]">
+        <div className="flex-1 bg-white m-4 p-2 self-center w-4/12 rounded-lg sm:w-[90%]">
           <input
             className="mx-auto"
             type="search"
@@ -78,7 +78,7 @@ function Main({ ironRentals, addFavourites }) {
             onChange={handleSearchCity}
           />
         </div>
-        <div className="flex-1 bg-white m-4 p-2 self-center w-4/12 rounded-lg flex gap-1">
+        <div className="flex-1 bg-white m-4 p-2 self-center w-4/12 rounded-lg flex gap-1 sm:w-[90%]">
           <button
             onClick={handleSortByReview}
             className="w-[50%] bg-headerBG mx-auto rounded-lg"
@@ -93,7 +93,7 @@ function Main({ ironRentals, addFavourites }) {
           </button>
         </div>
 
-        <div className="flex-1 bg-white m-4 p-2 self-center w-4/12 rounded-lg flex gap-2 justify-center">
+        <div className="flex-1 bg-white m-4 p-2 self-center w-4/12 rounded-lg flex gap-2 justify-center sm:w-[90%]">
           <p className="text-black">Accommodates</p>
           <input
             className=" "
