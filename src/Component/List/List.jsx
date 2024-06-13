@@ -30,7 +30,7 @@ function List({ rentalRooms, remove, addFavourites }) {
                   <City host_location={room.host_location} />
                   <Name name={room.name} />
                   <Price price={room.price} />
-                  <Review review={room}/>
+                  {/* <Review review={room}/> */}
                 </article>
               </Link>
               <div className="absolute top-0 w-[100%] flex justify-between text-white p-6">

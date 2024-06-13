@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 function Update({ rooms, handleUpdate }) {
   const params = useParams();
@@ -10,7 +10,7 @@ function Update({ rooms, handleUpdate }) {
   const [host_location, setCity] = useState(eachRoom.host_location);
   const [picture_url, setImageURL] = useState(eachRoom.picture_url);
   const [price, setPrice] = useState(eachRoom.price);
-
+  const navigate = useNavigate();
   function handleSubmit(event) {
     event.preventDefault();
     const updateRoom = {
@@ -19,7 +19,7 @@ function Update({ rooms, handleUpdate }) {
       picture_url,
       price,
     };
-
+    navigate("/");
     handleUpdate(updateRoom);
   }
   function handleCityChange(event) {
@@ -29,9 +29,9 @@ function Update({ rooms, handleUpdate }) {
     setImageURL(event.currentTarget.value);
   }
   function handlepriceChange(event) {
-    value =event.currentTarget.value
+    value = event.currentTarget.value;
     setPrice(event.currentTarget.value);
-    console.log(value)
+    console.log(value);
   }
 
   return (
@@ -44,7 +44,7 @@ function Update({ rooms, handleUpdate }) {
             value={host_location}
             onChange={handleCityChange}
             className="w-[90%] mx-2"
-          required
+            required
           />
           <span className="highlight"></span>
           <span className="bar"></span>
@@ -58,7 +58,7 @@ function Update({ rooms, handleUpdate }) {
             value={picture_url}
             onChange={handlePictureChange}
             className="w-[90%] mx-2"
-          required
+            required
           />
           <span className="highlight"></span>
           <span className="bar"></span>
@@ -72,7 +72,7 @@ function Update({ rooms, handleUpdate }) {
             value={price}
             onChange={handlepriceChange}
             className="w-[90%] mx-2"
-          required
+            required
           />
           <span className="highlight"></span>
           <span className="bar"></span>
@@ -91,7 +91,10 @@ function Update({ rooms, handleUpdate }) {
           <label htmlFor="review">Review: </label>
         </div> */}
 
-        <button className="bg-headerBG p-4 rounded-md text-white font-bold" type="submit">
+        <button
+          className="bg-headerBG p-4 rounded-md text-white font-bold"
+          type="submit"
+        >
           Create Iron dom
         </button>
       </form>
