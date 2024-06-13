@@ -9,13 +9,12 @@ import { faTrash } from "@fortawesome/free-solid-svg-icons";
 function Favourites({ favourites }) {
   const [rooms, setRooms] = useState(favourites);
   function handleDeleteCard(roomId) {
-
     const filteredRoom = rooms.filter((room) => room.id !== roomId);
     setRooms(filteredRoom);
   }
   console.log(favourites);
   return (
-    <div className="flex gap-2 w-[92%] mx-auto sm:flex-col">
+    <div className="flex gap-2 w-[92%] mx-auto sm:flex-col md:flex-row">
       {rooms.map((room) => {
         return (
           <article
@@ -26,7 +25,7 @@ function Favourites({ favourites }) {
             <City host_location={room.host_location} />
             <Name name={room.name} />
             <Price price={room.price} />
-            <button 
+            <button
               className="m-2 hover:text-red-500 absolute bottom-0 text-white"
               onClick={() => handleDeleteCard(room.id)}
             >

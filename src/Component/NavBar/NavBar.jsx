@@ -55,16 +55,16 @@ function Navbar() {
               if (e.currentTarget.name === "menu") {
                 e.currentTarget.name = "close";
                 ul.classList.add("sm:block");
-              
+
                 ul.classList.remove("sm:hidden");
-                header.classList.add("mb-[45%]")
+                header.classList.add("mb-[45%]");
                 console.log("hello");
               } else if (e.currentTarget.name === "close") {
                 e.currentTarget.name = "menu";
                 ul.classList.add("sm:hidden");
                 ul.classList.remove("sm:flex");
-    
-                header.classList.remove("mb-[45%]")
+
+                header.classList.remove("mb-[45%]");
               }
             }}
             name="menu"

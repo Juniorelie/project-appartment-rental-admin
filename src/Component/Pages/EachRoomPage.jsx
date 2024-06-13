@@ -46,12 +46,13 @@ function EachRoomPage({ rooms }) {
           <p className="mt-2">
             Number of People can Accommodates: {room.accommodates}
           </p>
-          <div className="mt-2">
+          <div className="mt-2 flex ">
             {stars.map((_, index) => {
               return (
                 
                 <>
-                <div key={_.id}>
+                <div>
+                  
                   <FontAwesomeIcon
                     icon={faStar}
                     key={room.id}
@@ -59,9 +60,10 @@ function EachRoomPage({ rooms }) {
                     color={
                       room.review_scores_rating > index
                         ? colors.orange
-                        : colors.grey
+                        : null
                     }
                   />
+                
                   </div>
                 </>
               );
